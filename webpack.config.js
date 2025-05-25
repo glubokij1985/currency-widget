@@ -41,7 +41,7 @@ module.exports = {
         name: 'currencyWidget',
       filename: 'remoteEntry.js',
       exposes: {
-        './Widget': './src/components/Widget.tsx',
+        './CurrencyWidget': './src/components/CurrencyWidget.tsx',
       },
     shared: {
         react: {
