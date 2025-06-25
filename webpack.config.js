@@ -19,11 +19,7 @@ module.exports = {
     clean: true,
     uniqueName: 'currencyWidget',
     library: { type: 'var', name: 'currencyWidget' },
-    // library: { type: 'module' },
   },
-  // experiments: {
-  //   outputModule: true,
-  // },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
@@ -33,6 +29,10 @@ module.exports = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: 'ts-loader',
+      },
+      {
+        test: /\.scss$/i,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
     ],
   },
