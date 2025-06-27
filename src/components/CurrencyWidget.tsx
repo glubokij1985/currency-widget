@@ -4,7 +4,6 @@ import { IExchangeRateResponse } from '../models/ExchangeRateResponse.interface'
 import { ICurrency } from '../models/Currency.interface';
 import { Autocomplete, Box, Card, CardContent, FormControl, TextField, Typography } from '@mui/material';
 import { IDisplayedCurrency } from '../models/DisplayedCurrency.interface';
-import './CurrencyWidget.scss';
 
 export const CurrencyWidget: React.FC = () => {
     const [currency, setCurrency] = useState<IDisplayedCurrency[]>([]);
