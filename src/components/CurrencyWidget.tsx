@@ -4,6 +4,7 @@ import { IExchangeRateResponse } from '../models/ExchangeRateResponse.interface'
 import { ICurrency } from '../models/Currency.interface';
 import { Autocomplete, Box, Card, CardContent, FormControl, TextField, Typography } from '@mui/material';
 import { IDisplayedCurrency } from '../models/DisplayedCurrency.interface';
+import { emitEvent } from '../event-bus';
 
 export const CurrencyWidget: React.FC = () => {
     const [currency, setCurrency] = useState<IDisplayedCurrency[]>([]);
@@ -42,6 +43,10 @@ export const CurrencyWidget: React.FC = () => {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', maxWidth: 800, height: '100%', margin: '0 auto', padding: 2 }}>
             <Box sx={{ flex: '0 0 auto' }}>
+                <Box sx={{ marginBottom: 2 }}>
+                    <button onClick={() => emitEvent('increment', 1)}>+1</button>
+                    <button onClick={() => emitEvent('reset')}>Reset</button>
+                </Box>
                 <FormControl fullWidth sx={{ marginBottom: 3 }}>
                     <Autocomplete
                         options={currencyList}
